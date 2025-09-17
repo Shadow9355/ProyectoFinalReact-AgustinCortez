@@ -2,23 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./detail.css"
 
-function Detail(){
-    const {id} = useParams();
-    const [producto, setProducto] = useState(null);
-
-    useEffect(() => {
-        fetch("/productos.json")
-            .then(response => response.json())
-            .then(data => {
-                const item = data.find((prod) => prod.id === parseInt(id));
-                setProducto(item)
-            })
-            .catch(err => console.error("Error cargando el producto:",err))
-    }, [id]);
-
-    if(!producto) {
-        return <h1>Producto no encontrado . . .</h1>;
-    }
+function ItemDetail({producto}){
 
     return (
         <>
@@ -38,4 +22,4 @@ function Detail(){
     );
 }
 
-export default Detail
+export default ItemDetail

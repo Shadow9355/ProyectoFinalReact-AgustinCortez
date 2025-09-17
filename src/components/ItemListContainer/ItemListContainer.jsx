@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
-import Item from "./Item"
+import ItemList from "./ItemList";
+import { useParams } from "react-router-dom";
+import { getProducts } from "../../../services/products";
 
-function ItemListContainer({genero}) {
+function ItemListContainer({ genero }) {
+  const {genero} = useParams();
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
-    fetch("/productos.json")
-      .then(response => response.json())
-      .then(data => {
+    getProducts()
+      .then((data) => {
         if (genero) {
           setProductos(data.filter(item => item.genero === genero));
         } else {
@@ -20,18 +22,7 @@ function ItemListContainer({genero}) {
 
   return (
     <>
-      <div className='list-item-container'>
-        {productos.map((item) => (
-          <Item 
-            key={item.id} 
-            id={item.id}
-            producto={item.producto} 
-            precio={item.precio} 
-            genero={item.genero} 
-            src={item.src} 
-            alt={item.producto} />
-        ))}
-      </div>
+      <ItemList productos={productos}/>
     </>
   );
 }
