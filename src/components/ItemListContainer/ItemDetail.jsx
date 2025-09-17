@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import "./detail.css"
 
 function ItemDetail({producto}){
+    if (!producto) return null;
 
     return (
         <>

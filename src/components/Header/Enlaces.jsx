@@ -9,10 +9,10 @@ function Enlaces(){
                         <Link to={"/"}>Home</Link>
                     </li>
                     <li className="nav-item ps-5">
-                        <Link to="/man">Man</Link>
+                        <Link to="/categoria/hombre">Hombre</Link>
                     </li>
                     <li className="nav-item ps-5">
-                        <Link to="/woman">Woman</Link>
+                        <Link to="/categoria/mujer">Mujer</Link>
                     </li>
             </ul>
         </>

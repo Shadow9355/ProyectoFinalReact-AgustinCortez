@@ -3,7 +3,7 @@ import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import { getProducts } from "../../../services/products";
 
-function ItemListContainer({ genero }) {
+function ItemListContainer() {
   const {genero} = useParams();
   const [productos, setProductos] = useState([]);
 
