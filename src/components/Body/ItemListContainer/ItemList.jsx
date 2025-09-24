@@ -1,4 +1,6 @@
 import Item from "./Item"
+import "./item.css"
+
 
 function ItemList({productos}){
 

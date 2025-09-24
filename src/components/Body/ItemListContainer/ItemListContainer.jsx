@@ -1,23 +1,24 @@
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
-import { getProducts } from "../../../services/products";
+import "./item.css"
 
 function ItemListContainer() {
   const {genero} = useParams();
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
-    getProducts()
-      .then((data) => {
+    fetch("/productos.json") 
+      .then(res => res.json())      
+      .then(data => {
         if (genero) {
-          setProductos(data.filter(item => item.genero === genero));
+          const productosFiltrados = data.filter(item => item.genero === genero);
+          setProductos(productosFiltrados);
         } else {
           setProductos(data);
         }
       })
-      .catch(error => console.error("Error cargando los productos:", error))
-  }, [genero]);
+    })
 
 
   return (

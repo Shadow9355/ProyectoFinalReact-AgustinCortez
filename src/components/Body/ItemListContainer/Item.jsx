@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
+import "./item.css"
+
 
 function Item({id, genero, src, producto, precio}){
 
     return(
         <>
             <div className="card">
-                <Link to={`/productos/${id}`}>
+                <Link to={`/producto/${id}`}>
                     <img src={src} className="card-img-top img-fluid" alt={producto}/>
                 </Link>
                 <div className="card-body">
