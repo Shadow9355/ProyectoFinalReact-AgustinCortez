@@ -3,7 +3,7 @@ function Logo() {
     return (
         <>
             <a href="#" className="navbar-brand ps-5">
-                <img src="/Logo.png" alt="Logo.png" className="logo"/>
+                <img src="/logo.png" alt="Logo" className="logo"/>
             </a>
         </>
     )
