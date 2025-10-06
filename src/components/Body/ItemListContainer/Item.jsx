@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./item.css"
 
 
-function Item({id, genero, src, producto, precio}){
+function Item({id, src, producto, precio}){
 
     return(
         <>

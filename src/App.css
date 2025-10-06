@@ -7,7 +7,7 @@
 
 body {
     background-color: #1d2f3f;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: white;
 }
 
@@ -21,7 +21,7 @@ body {
 }
 
 .nav-item {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: small;
     font-weight: 600;
     list-style: none;

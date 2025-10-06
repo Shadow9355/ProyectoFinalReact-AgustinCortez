@@ -1,24 +1,26 @@
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import "./item.css"
+import { getItems } from "../../../firebase";
 
 function ItemListContainer() {
   const {genero} = useParams();
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
-    fetch("/productos.json") 
-      .then(res => res.json())      
-      .then(data => {
-        if (genero) {
-          const productosFiltrados = data.filter(item => item.genero === genero);
-          setProductos(productosFiltrados);
-        } else {
-          setProductos(data);
+    getItems()
+      .then(res => {
+        if (genero){
+          setProductos(res.filter(prod => prod.genero === genero))
+          console.log(res)
+        } 
+        else {
+          setProductos(res)
         }
       })
-    })
+      .catch(err => console.log("Error:",err))
+    }, [genero]);
 
 
   return (

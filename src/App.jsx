@@ -5,8 +5,15 @@ import ItemListContainer from './components/Body/ItemListContainer/ItemListConta
 import ItemDetailContainer from './components/Body/ItemDetailContainer/ItemDetailContainer'
 import Error from './components/Error'
 import { CartProvider } from './components/Context/context'
+import { useEffect } from 'react'
+import { getItems} from './firebase'
 
 function App() {
+
+  useEffect(() => {
+    getItems()
+  }, []);
+  
 
   return (
     <>
