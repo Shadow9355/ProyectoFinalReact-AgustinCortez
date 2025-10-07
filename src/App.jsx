@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Layout from './components/Layout'
-import ItemListContainer from './components/Body/ItemListContainer/ItemListContainer'
-import ItemDetailContainer from './components/Body/ItemDetailContainer/ItemDetailContainer'
+import ItemListContainer from './components/body/ItemListContainer/ItemListContainer'
+import ItemDetailContainer from './components/body/ItemDetailContainer/ItemDetailContainer'
 import Error from './components/Error'
-import { CartProvider } from './components/Context/context'
+import { CartProvider } from './components/context/context'
 import { useEffect } from 'react'
 import { getItems} from './firebase'
 
