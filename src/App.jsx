@@ -4,7 +4,8 @@ import Layout from './components/Layout.jsx'
 import ItemListContainer from './components/body/ItemListContainer/ItemListContainer.jsx'
 import ItemDetailContainer from './components/body/ItemDetailContainer/ItemDetailContainer.jsx'
 import Error from './components/Error.jsx'
-import { CartProvider } from './components/context/context.jsx'
+import Cart from './components/Cart.jsx'
+import { CartProvider } from './context/cartContext.jsx'
 import { useEffect } from 'react'
 import { getItems} from './firebase.js'
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/categoria/:genero" element={<ItemListContainer />} />
           <Route path="/producto/:id" element={<ItemDetailContainer />} />
           <Route path="*" element={<Error />} />
+          <Route path="/carrito" element={<Cart />} />
         </Route>
         </Routes>
       </BrowserRouter>

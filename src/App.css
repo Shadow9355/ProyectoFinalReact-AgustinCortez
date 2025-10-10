@@ -11,7 +11,7 @@ body {
     color: white;
 }
 
-/*  HEADER  */
+ /* HEADER  */
 
 .navbar {
     border-bottom: 2px solid #8f9fb1;
@@ -62,4 +62,22 @@ li a {
 
 .error-page h6 {
     margin-top: 2.5rem;
+}
+
+/* CARRITO */
+
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.05rem
+}
+
+.cart-rows{
+    background-color: rgb(124, 124, 121);
+}
+
+.span-cart {
+    text-decoration: none;
+    color: white;
+    margin-left: .3125rem;
 }
